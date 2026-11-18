@@ -1,0 +1,9 @@
+# Optional local comparison viewer bundle (kept locally; omitted from the lightweight public demo).
+viewer/
+poster/
+assets/poster.pdf
+assets/work-and-measurements.pdf
+assets/campus-stream/texture-77def114f878.jpg
+assets/campus-stream/texture-web.jpg
+architecture/
+walkthrough/
