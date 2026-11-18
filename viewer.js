@@ -6,7 +6,7 @@ export async function mountViewer(){
  if(resumeViewer)return resumeViewer();
  const status=document.querySelector('#viewer-status'),host=document.querySelector('#canvas-host'),box=document.querySelector('#viewer');
  const base=new URL('./assets/campus-stream/',import.meta.url);
- const manifest=await fetch(new URL('manifest.json?v=4',base)).then(r=>{if(!r.ok)throw new Error('Model manifest unavailable.');return r.json()});
+ const manifest=await fetch(new URL('manifest.json?v=5',base)).then(r=>{if(!r.ok)throw new Error('Model manifest unavailable.');return r.json()});
  const preview=await loadTexture(new URL(manifest.previewTexture.url,base));
  const material=new THREE.MeshBasicMaterial({map:preview,side:THREE.DoubleSide});
  const model=new THREE.Group();
