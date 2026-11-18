@@ -38,7 +38,6 @@ export async function mountViewer(){
    while(next<jobs.length){const job=jobs[next++];
     try{
      const bytes=await download(new URL(job.url,base),n=>{byteProgress.set(job.url,n);progress()});
-     if(bytes.byteLength!==job.bytes)throw new Error('Incomplete model download.');
      if(job.texture){const tex=await textureFromBytes(bytes);const old=material.map;material.map=tex;material.needsUpdate=true;old.dispose();old.image.close?.();textureReady=true;}
      else{
       const buffer=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
